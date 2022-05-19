@@ -36,4 +36,4 @@ code: "def backward_string_by_word(text: str) -> str:\n    # your code here\n   
   \ == 'olleh   dlrow'\n    assert backward_string_by_word('welcome to a game') ==\
   \ 'emoclew ot a emag'\n    print(\"Coding complete? Click 'Check' to earn cool rewards!\"\
   )\n"
-seconds_from_change: 57490415
+seconds_from_change: 57497065

@@ -23,4 +23,4 @@ code: "import datetime\ndef days_diff(a, b):\n    # your code here\n    aa = dat
   \    assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3\n    assert days_diff((2014,\
   \ 1, 1), (2014, 8, 27)) == 238\n    assert days_diff((2014, 8, 27), (2014, 1, 1))\
   \ == 238\n    print(\"Coding complete? Click 'Check' to earn cool rewards!\")\n"
-seconds_from_change: 57493917
+seconds_from_change: 57500568

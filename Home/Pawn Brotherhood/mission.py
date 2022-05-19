@@ -1,20 +1,43 @@
-def safe_pawns(pawns: set) -> int:
-    abc = 'abcdefghijklmnopqrstuvwxyz'
-    num = '12345678'
-    cnt = 0
-    for pawn in pawns:
-        letter_index = abc.index(pawn[0])
-        number_of_pos = int(pawn[1])
-        pre_lett = abc[letter_index - 1]
-        after_lett = abc[letter_index + 1]
-        after_pos = number_of_pos + 1
-        pre_lett_pos = pre_lett + str(after_pos)
-        after_lett_pos = after_lett + str(after_pos)
-        for p in pawns:
-            if p == pre_lett_pos:
-                cnt += 1
+from pprint import pprint
 
-    return cnt * 2
+
+def safe_pawns(pawns: set) -> int:
+    alf = 'abcdefgh'
+    abc = {c: i for i, c in enumerate(alf)}
+    desk = [[0 for x in range(8)] for _ in range(8)]
+    for pawn in pawns:
+        x = abc[pawn[0]]
+        y = int(pawn[1]) - 1
+        desk[y][x] = 1
+    all = 0
+    for y, row in enumerate(desk):
+        for x, col in enumerate(row):
+            if col == 0:
+                continue
+            left_y, left_x = y + 1, x - 1
+            right_y, right_x = y + 1, x + 1
+            try:
+                check_left = desk[left_y][left_x]
+                if left_x == -1:
+                    check_left = 0
+                if check_left == 2:
+                    check_left = 0
+                if check_left == 1:
+                    desk[left_y][left_x] = 2
+            except:
+                check_left = 0
+            try:
+                check_right = desk[right_y][right_x]
+                if right_x == -1:
+                    check_right = 0
+                if check_right == 2:
+                    check_right = 0
+                if check_right == 1:
+                    desk[right_y][right_x] = 2
+            except:
+                check_right = 0
+            all += check_right + check_left
+    return all
 
 
 if __name__ == '__main__':

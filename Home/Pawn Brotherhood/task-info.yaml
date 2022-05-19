@@ -2,30 +2,106 @@ type: checkiO
 files:
 - name: mission.py
   visible: true
-  text: "def safe_pawns(pawns: set) -> int:\n    abc = 'abcdefghijklmnopqrstuvwxyz'\n\
-    \    num = '12345678'\n    cnt = 0\n    for pawn in pawns:\n        letter_index\
-    \ = abc.index(pawn[0])\n        number_of_pos = int(pawn[1])\n        pre_lett\
-    \ = abc[letter_index - 1]\n        after_lett = abc[letter_index + 1]\n      \
-    \  after_pos = number_of_pos + 1\n        pre_lett_pos = pre_lett + str(after_pos)\n\
-    \        after_lett_pos = after_lett + str(after_pos)\n        for p in pawns:\n\
-    \            if p == pre_lett_pos:\n                cnt += 1\n\n        \n   \
-    \ return cnt * 2\n\n\nif __name__ == '__main__':\n    #These \"asserts\" using\
-    \ only for self-checking and not necessary for auto-testing\n    assert safe_pawns({\"\
-    b4\", \"d4\", \"f4\", \"c3\", \"e3\", \"g5\", \"d2\"}) == 6\n    assert safe_pawns({\"\
-    b4\", \"c4\", \"d4\", \"e4\", \"f4\", \"g4\", \"e5\"}) == 1\n    print(\"Coding\
-    \ complete? Click 'Check' to review your tests and earn cool rewards!\")\n"
+  text: |
+    from pprint import pprint
+
+
+    def safe_pawns(pawns: set) -> int:
+        alf = 'abcdefgh'
+        abc = {c: i for i, c in enumerate(alf)}
+        desk = [[0 for x in range(8)] for _ in range(8)]
+        for pawn in pawns:
+            x = abc[pawn[0]]
+            y = int(pawn[1]) - 1
+            desk[y][x] = 1
+        all = 0
+        pprint(desk)
+        for y, row in enumerate(desk):
+            for x, col in enumerate(row):
+                if col == 0:
+                    continue
+                left_y, left_x = y + 1, x - 1
+                right_y, right_x = y + 1, x + 1
+                try:
+                    check_left = desk[left_y][left_x]
+                    if left_x == -1:
+                        check_left = 0
+                    if check_left == 2:
+                        check_left = 0
+                    if check_left == 1:
+                        desk[left_y][left_x] = 2
+                except:
+                    check_left = 0
+                try:
+                    check_right = desk[right_y][right_x]
+                    if right_x == -1:
+                        check_right = 0
+                    if check_right == 2:
+                        check_right = 0
+                    if check_right == 1:
+                        desk[right_y][right_x] = 2
+                    pprint(desk)
+                except:
+                    check_right = 0
+                all += check_right + check_left
+        print(all)
+        return all
+    if __name__ == '__main__':
+        # These "asserts" using only for self-checking and not necessary for auto-testing
+        safe_pawns({'a4', 'a3', 'a2', 'a1'})
+        # assert safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}) == 6
+        # assert safe_pawns({"b4", "c4", "d4", "e4", "f4", "g4", "e5"}) == 1
+        # print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
   learner_created: false
-status: Unchecked
-code: "def safe_pawns(pawns: set) -> int:\n    abc = 'abcdefghijklmnopqrstuvwxyz'\n\
-  \    num = '12345678'\n    cnt = 0\n    for pawn in pawns:\n        letter_index\
-  \ = abc.index(pawn[0])\n        number_of_pos = int(pawn[1])\n        pre_lett =\
-  \ abc[letter_index - 1]\n        after_lett = abc[letter_index + 1]\n        after_pos\
-  \ = number_of_pos + 1\n        pre_lett_pos = pre_lett + str(after_pos)\n      \
-  \  after_lett_pos = after_lett + str(after_pos)\n        for p in pawns:\n     \
-  \       if p == pre_lett_pos:\n                cnt += 1\n\n        \n    return\
-  \ cnt * 2\n\n\nif __name__ == '__main__':\n    #These \"asserts\" using only for\
-  \ self-checking and not necessary for auto-testing\n    assert safe_pawns({\"b4\"\
-  , \"d4\", \"f4\", \"c3\", \"e3\", \"g5\", \"d2\"}) == 6\n    assert safe_pawns({\"\
-  b4\", \"c4\", \"d4\", \"e4\", \"f4\", \"g4\", \"e5\"}) == 1\n    print(\"Coding\
-  \ complete? Click 'Check' to review your tests and earn cool rewards!\")\n"
-seconds_from_change: 20577360
+status: Solved
+code: |
+  from pprint import pprint
+
+
+  def safe_pawns(pawns: set) -> int:
+      alf = 'abcdefgh'
+      abc = {c: i for i, c in enumerate(alf)}
+      desk = [[0 for x in range(8)] for _ in range(8)]
+      for pawn in pawns:
+          x = abc[pawn[0]]
+          y = int(pawn[1]) - 1
+          desk[y][x] = 1
+      all = 0
+      pprint(desk)
+      for y, row in enumerate(desk):
+          for x, col in enumerate(row):
+              if col == 0:
+                  continue
+              left_y, left_x = y + 1, x - 1
+              right_y, right_x = y + 1, x + 1
+              try:
+                  check_left = desk[left_y][left_x]
+                  if left_x == -1:
+                      check_left = 0
+                  if check_left == 2:
+                      check_left = 0
+                  if check_left == 1:
+                      desk[left_y][left_x] = 2
+              except:
+                  check_left = 0
+              try:
+                  check_right = desk[right_y][right_x]
+                  if right_x == -1:
+                      check_right = 0
+                  if check_right == 2:
+                      check_right = 0
+                  if check_right == 1:
+                      desk[right_y][right_x] = 2
+                  pprint(desk)
+              except:
+                  check_right = 0
+              all += check_right + check_left
+      print(all)
+      return all
+  if __name__ == '__main__':
+      # These "asserts" using only for self-checking and not necessary for auto-testing
+      safe_pawns({'a4', 'a3', 'a2', 'a1'})
+      # assert safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}) == 6
+      # assert safe_pawns({"b4", "c4", "d4", "e4", "f4", "g4", "e5"}) == 1
+      # print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+seconds_from_change: 2
