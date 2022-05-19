@@ -1,0 +1,26 @@
+type: checkiO
+files:
+- name: mission.py
+  visible: true
+  text: "import datetime\ndef days_diff(a, b):\n    # your code here\n    aa = datetime.date(int(a[0]),int(a[1]),int(a[2]))\n\
+    \    bb = datetime.date(int(b[0]),int(b[1]),int(b[2]))\n    cc = str(abs(aa-bb))\n\
+    \    days = cc.split()[0]\n    \n    if days != \"0:00:00\":    \n        return\
+    \ int(days)\n    else:\n        return 0\n    \nif __name__ == '__main__':\n \
+    \   print(\"Example:\")\n    print(days_diff((1982, 4, 19), (1982, 4, 22)))\n\n\
+    \    # These \"asserts\" are used for self-checking and not for an auto-testing\n\
+    \    assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3\n    assert days_diff((2014,\
+    \ 1, 1), (2014, 8, 27)) == 238\n    assert days_diff((2014, 8, 27), (2014, 1,\
+    \ 1)) == 238\n    print(\"Coding complete? Click 'Check' to earn cool rewards!\"\
+    )\n"
+  learner_created: false
+status: Solved
+code: "import datetime\ndef days_diff(a, b):\n    # your code here\n    aa = datetime.date(int(a[0]),int(a[1]),int(a[2]))\n\
+  \    bb = datetime.date(int(b[0]),int(b[1]),int(b[2]))\n    cc = str(abs(aa-bb))\n\
+  \    days = cc.split()[0]\n    \n    if days != \"0:00:00\":    \n        return\
+  \ int(days)\n    else:\n        return 0\n    \nif __name__ == '__main__':\n   \
+  \ print(\"Example:\")\n    print(days_diff((1982, 4, 19), (1982, 4, 22)))\n\n  \
+  \  # These \"asserts\" are used for self-checking and not for an auto-testing\n\
+  \    assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3\n    assert days_diff((2014,\
+  \ 1, 1), (2014, 8, 27)) == 238\n    assert days_diff((2014, 8, 27), (2014, 1, 1))\
+  \ == 238\n    print(\"Coding complete? Click 'Check' to earn cool rewards!\")\n"
+seconds_from_change: 57493917

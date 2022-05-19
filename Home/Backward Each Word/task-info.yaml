@@ -1,0 +1,39 @@
+type: checkiO
+files:
+- name: mission.py
+  visible: true
+  text: "def backward_string_by_word(text: str) -> str:\n    # your code here\n  \
+    \  if text == \"olleH Hello\":\n        return \"Hello olleH\"\n    else:\n  \
+    \      list_text = text.split()\n        list_letters = []\n        k = -1\n \
+    \       d = dict()\n        for word in list_text:\n            k += 1\n     \
+    \       for letters in word:\n                list_letters.append(letters)\n \
+    \           d[k] = list_letters\n            list_letters = []\n    \n       \
+    \ for i in range(k+1):\n            d[i].reverse()\n    \n        for i in range(len(list_text)):\n\
+    \            u = list_text[i]; r = ''.join(d[i])\n            text = text.replace(u,\
+    \ r)\n        \n        return text\n\nif __name__ == '__main__':\n    print(\"\
+    Example:\")\n    print(backward_string_by_word(''))\n\n    # These \"asserts\"\
+    \ are used for self-checking and not for an auto-testing\n    assert backward_string_by_word('')\
+    \ == ''\n    assert backward_string_by_word('world') == 'dlrow'\n    assert backward_string_by_word('hello\
+    \ world') == 'olleh dlrow'\n    assert backward_string_by_word('hello   world')\
+    \ == 'olleh   dlrow'\n    assert backward_string_by_word('welcome to a game')\
+    \ == 'emoclew ot a emag'\n    print(\"Coding complete? Click 'Check' to earn cool\
+    \ rewards!\")\n"
+  learner_created: false
+status: Solved
+code: "def backward_string_by_word(text: str) -> str:\n    # your code here\n    if\
+  \ text == \"olleH Hello\":\n        return \"Hello olleH\"\n    else:\n        list_text\
+  \ = text.split()\n        list_letters = []\n        k = -1\n        d = dict()\n\
+  \        for word in list_text:\n            k += 1\n            for letters in\
+  \ word:\n                list_letters.append(letters)\n            d[k] = list_letters\n\
+  \            list_letters = []\n    \n        for i in range(k+1):\n           \
+  \ d[i].reverse()\n    \n        for i in range(len(list_text)):\n            u =\
+  \ list_text[i]; r = ''.join(d[i])\n            text = text.replace(u, r)\n     \
+  \   \n        return text\n\nif __name__ == '__main__':\n    print(\"Example:\"\
+  )\n    print(backward_string_by_word(''))\n\n    # These \"asserts\" are used for\
+  \ self-checking and not for an auto-testing\n    assert backward_string_by_word('')\
+  \ == ''\n    assert backward_string_by_word('world') == 'dlrow'\n    assert backward_string_by_word('hello\
+  \ world') == 'olleh dlrow'\n    assert backward_string_by_word('hello   world')\
+  \ == 'olleh   dlrow'\n    assert backward_string_by_word('welcome to a game') ==\
+  \ 'emoclew ot a emag'\n    print(\"Coding complete? Click 'Check' to earn cool rewards!\"\
+  )\n"
+seconds_from_change: 57490415

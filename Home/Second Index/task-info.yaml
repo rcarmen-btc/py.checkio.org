@@ -1,0 +1,30 @@
+type: checkiO
+files:
+- name: mission.py
+  visible: true
+  text: "def second_index(text: str, symbol: str) -> [int, None]:\n    \"\"\"\n\t\t\
+    returns the second index of a symbol in a given text\n\t\"\"\"\n\t# your code\
+    \ here\n\tbegin = 0\n\tn = 2\n\twhile (n > 0):\n\t\tbegin = text.find(symbol,\
+    \ begin, len(text))\n\t\tbegin += 1 if (begin != -1) else 0\n\t\tn -= 1\n\tif\
+    \ (begin == -1):\n\t\treturn (None)\n\treturn begin - 1\n\n\nif __name__ == '__main__':\n\
+    \tprint('Example:')\n\tprint(second_index(\"sims\", \"a\"))\n\n\t# These \"asserts\"\
+    \ are used for self-checking and not for an auto-testing\n\tassert second_index(\"\
+    sims\", \"s\") == 3, \"First\"\n\tassert second_index(\"find the river\", \"e\"\
+    ) == 12, \"Second\"\n\tassert second_index(\"hi\", \" \") is None, \"Third\"\n\
+    \tassert second_index(\"hi mayor\", \" \") is None, \"Fourth\"\n\tassert second_index(\"\
+    hi mr Mayor\", \" \") == 5, \"Fifth\"\n\tprint('You are awesome! All tests are\
+    \ done! Go Check it!')\n"
+  learner_created: false
+status: Solved
+code: "def second_index(text: str, symbol: str) -> [int, None]:\n    \"\"\"\n\t\t\
+  returns the second index of a symbol in a given text\n\t\"\"\"\n\t# your code here\n\
+  \tbegin = 0\n\tn = 2\n\twhile (n > 0):\n\t\tbegin = text.find(symbol, begin, len(text))\n\
+  \t\tbegin += 1 if (begin != -1) else 0\n\t\tn -= 1\n\tif (begin == -1):\n\t\treturn\
+  \ (None)\n\treturn begin - 1\n\n\nif __name__ == '__main__':\n\tprint('Example:')\n\
+  \tprint(second_index(\"sims\", \"a\"))\n\n\t# These \"asserts\" are used for self-checking\
+  \ and not for an auto-testing\n\tassert second_index(\"sims\", \"s\") == 3, \"First\"\
+  \n\tassert second_index(\"find the river\", \"e\") == 12, \"Second\"\n\tassert second_index(\"\
+  hi\", \" \") is None, \"Third\"\n\tassert second_index(\"hi mayor\", \" \") is None,\
+  \ \"Fourth\"\n\tassert second_index(\"hi mr Mayor\", \" \") == 5, \"Fifth\"\n\t\
+  print('You are awesome! All tests are done! Go Check it!')\n"
+seconds_from_change: 39152175

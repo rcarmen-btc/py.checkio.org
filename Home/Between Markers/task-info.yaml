@@ -1,0 +1,37 @@
+type: checkiO
+files:
+- name: mission.py
+  visible: true
+  text: "def between_markers(text: str, begin: str, end: str) -> str:\n    \"\"\"\n\
+    \        returns substring between two given markers\n    \"\"\"\n    # your code\
+    \ here\n    s = text.find(begin)\n    e = text.find(end)\n    s += len(begin)\
+    \ if (s != -1) else 1\n    e = len(text) if (e == -1) else e\n    return text[s:e]\n\
+    \    \n    return ''\n\n\nif __name__ == '__main__':\n    print('Example:')\n\
+    \    print(between_markers('What is >apple<', '>', '<'))\n\n    # These \"asserts\"\
+    \ are used for self-checking and not for testing\n    assert between_markers('What\
+    \ is >apple<', '>', '<') == \"apple\", \"One sym\"\n    assert between_markers(\"\
+    <head><title>My new site</title></head>\",\n                           \"<title>\"\
+    , \"</title>\") == \"My new site\", \"HTML\"\n    assert between_markers('No[/b]\
+    \ hi', '[b]', '[/b]') == 'No', 'No opened'\n    assert between_markers('No [b]hi',\
+    \ '[b]', '[/b]') == 'hi', 'No close'\n    assert between_markers('No hi', '[b]',\
+    \ '[/b]') == 'No hi', 'No markers at all'\n    assert between_markers('No <hi>',\
+    \ '>', '<') == '', 'Wrong direction'\n    print('Wow, you are doing pretty good.\
+    \ Time to check it!')\n"
+  learner_created: false
+status: Solved
+code: "def between_markers(text: str, begin: str, end: str) -> str:\n    \"\"\"\n\
+  \        returns substring between two given markers\n    \"\"\"\n    # your code\
+  \ here\n    s = text.find(begin)\n    e = text.find(end)\n    s += len(begin) if\
+  \ (s != -1) else 1\n    e = len(text) if (e == -1) else e\n    return text[s:e]\n\
+  \    \n    return ''\n\n\nif __name__ == '__main__':\n    print('Example:')\n  \
+  \  print(between_markers('What is >apple<', '>', '<'))\n\n    # These \"asserts\"\
+  \ are used for self-checking and not for testing\n    assert between_markers('What\
+  \ is >apple<', '>', '<') == \"apple\", \"One sym\"\n    assert between_markers(\"\
+  <head><title>My new site</title></head>\",\n                           \"<title>\"\
+  , \"</title>\") == \"My new site\", \"HTML\"\n    assert between_markers('No[/b]\
+  \ hi', '[b]', '[/b]') == 'No', 'No opened'\n    assert between_markers('No [b]hi',\
+  \ '[b]', '[/b]') == 'hi', 'No close'\n    assert between_markers('No hi', '[b]',\
+  \ '[/b]') == 'No hi', 'No markers at all'\n    assert between_markers('No <hi>',\
+  \ '>', '<') == '', 'Wrong direction'\n    print('Wow, you are doing pretty good.\
+  \ Time to check it!')\n"
+seconds_from_change: 39161055

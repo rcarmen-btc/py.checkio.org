@@ -1,0 +1,31 @@
+type: checkiO
+files:
+- name: mission.py
+  visible: true
+  text: "def safe_pawns(pawns: set) -> int:\n    abc = 'abcdefghijklmnopqrstuvwxyz'\n\
+    \    num = '12345678'\n    cnt = 0\n    for pawn in pawns:\n        letter_index\
+    \ = abc.index(pawn[0])\n        number_of_pos = int(pawn[1])\n        pre_lett\
+    \ = abc[letter_index - 1]\n        after_lett = abc[letter_index + 1]\n      \
+    \  after_pos = number_of_pos + 1\n        pre_lett_pos = pre_lett + str(after_pos)\n\
+    \        after_lett_pos = after_lett + str(after_pos)\n        for p in pawns:\n\
+    \            if p == pre_lett_pos:\n                cnt += 1\n\n        \n   \
+    \ return cnt * 2\n\n\nif __name__ == '__main__':\n    #These \"asserts\" using\
+    \ only for self-checking and not necessary for auto-testing\n    assert safe_pawns({\"\
+    b4\", \"d4\", \"f4\", \"c3\", \"e3\", \"g5\", \"d2\"}) == 6\n    assert safe_pawns({\"\
+    b4\", \"c4\", \"d4\", \"e4\", \"f4\", \"g4\", \"e5\"}) == 1\n    print(\"Coding\
+    \ complete? Click 'Check' to review your tests and earn cool rewards!\")\n"
+  learner_created: false
+status: Unchecked
+code: "def safe_pawns(pawns: set) -> int:\n    abc = 'abcdefghijklmnopqrstuvwxyz'\n\
+  \    num = '12345678'\n    cnt = 0\n    for pawn in pawns:\n        letter_index\
+  \ = abc.index(pawn[0])\n        number_of_pos = int(pawn[1])\n        pre_lett =\
+  \ abc[letter_index - 1]\n        after_lett = abc[letter_index + 1]\n        after_pos\
+  \ = number_of_pos + 1\n        pre_lett_pos = pre_lett + str(after_pos)\n      \
+  \  after_lett_pos = after_lett + str(after_pos)\n        for p in pawns:\n     \
+  \       if p == pre_lett_pos:\n                cnt += 1\n\n        \n    return\
+  \ cnt * 2\n\n\nif __name__ == '__main__':\n    #These \"asserts\" using only for\
+  \ self-checking and not necessary for auto-testing\n    assert safe_pawns({\"b4\"\
+  , \"d4\", \"f4\", \"c3\", \"e3\", \"g5\", \"d2\"}) == 6\n    assert safe_pawns({\"\
+  b4\", \"c4\", \"d4\", \"e4\", \"f4\", \"g4\", \"e5\"}) == 1\n    print(\"Coding\
+  \ complete? Click 'Check' to review your tests and earn cool rewards!\")\n"
+seconds_from_change: 20577360

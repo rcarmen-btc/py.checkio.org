@@ -1,0 +1,30 @@
+type: checkiO
+files:
+- name: mission.py
+  visible: true
+  text: "def popular_words(text: str, words: list) -> dict:\n    # your code here\n\
+    \tres = []\n\tcount = 0\n\ttext = text.strip('\\n')\n\ttext = text.lower()\n\t\
+    textArr = text.split()\n\tfor w in words:\n\t\tfor wo in textArr:\n\t\t\tif (wo\
+    \ == w):\n\t\t\t\tcount += 1\n\t\tres.append(count)\n\t\tcount = 0\n\tres = dict(zip(words,\
+    \ res))\n\treturn res\n\n\nif __name__ == '__main__':\n\tprint(\"Example:\")\n\
+    \tprint(popular_words('''\nWhen I was One\nI had just begun\nWhen I was Two\n\
+    I was nearly new\n''', ['i', 'was', 'three', 'near']))\n\n\t# These \"asserts\"\
+    \ are used for self-checking and not for an auto-testing\n\tassert popular_words('''\n\
+    When I was One\nI had just begun\nWhen I was Two\nI was nearly new\n''', ['i',\
+    \ 'was', 'three', 'near']) == {\n\t\t'i': 4,\n\t\t'was': 3,\n\t\t'three': 0,\n\
+    \t\t'near': 0\n\t}\n\tprint(\"Coding complete? Click 'Check' to earn cool rewards!\"\
+    )\n"
+  learner_created: false
+status: Solved
+code: "def popular_words(text: str, words: list) -> dict:\n    # your code here\n\t\
+  res = []\n\tcount = 0\n\ttext = text.strip('\\n')\n\ttext = text.lower()\n\ttextArr\
+  \ = text.split()\n\tfor w in words:\n\t\tfor wo in textArr:\n\t\t\tif (wo == w):\n\
+  \t\t\t\tcount += 1\n\t\tres.append(count)\n\t\tcount = 0\n\tres = dict(zip(words,\
+  \ res))\n\treturn res\n\n\nif __name__ == '__main__':\n\tprint(\"Example:\")\n\t\
+  print(popular_words('''\nWhen I was One\nI had just begun\nWhen I was Two\nI was\
+  \ nearly new\n''', ['i', 'was', 'three', 'near']))\n\n\t# These \"asserts\" are\
+  \ used for self-checking and not for an auto-testing\n\tassert popular_words('''\n\
+  When I was One\nI had just begun\nWhen I was Two\nI was nearly new\n''', ['i', 'was',\
+  \ 'three', 'near']) == {\n\t\t'i': 4,\n\t\t'was': 3,\n\t\t'three': 0,\n\t\t'near':\
+  \ 0\n\t}\n\tprint(\"Coding complete? Click 'Check' to earn cool rewards!\")\n"
+seconds_from_change: 39154096
